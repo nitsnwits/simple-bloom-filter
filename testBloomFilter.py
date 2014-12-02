@@ -6,8 +6,7 @@
 # TODO: Compare murmurhash, sha, python hash, cityhash, pyfasthash?
 #
 
-
-from bloomFilter import BloomFilter
+from src.bloomFilter import BloomFilter
 import uuid
 
 def getRandomString():
