@@ -21,6 +21,8 @@ class BloomFilter(object):
 	"""
 	def __init__(self, m, k):
 		# decide methods and how many and what hashes to be used
+		if not m or k or m <= 0 or k <= 0:
+			raise ValueError('Error: m and k are needed and should be greater than zero.')
 		self.m = m # number of bits in the array
 		self.k = k # number of hashes to be used
 		self.n = 0 # total count of the elemnts inserted in the set, intialized to zero, if this is incremented on add, this will be length of the filter, given elements are not removed
