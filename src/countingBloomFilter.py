@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 #
-# Simple implementation of bloom fitler in python
+# Simple implementation of counting bloom fitler in python
 #
 #
 
@@ -9,15 +9,15 @@ import sys
 import mmh3 # murmurhash: is faster for blooms
 import BitVector
 import math
+from bitarray import bitarray
 
 # set default encoding to utf-8
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-
-class BloomFilter(object):
+class CountingBloomFilter(object):
 	"""
-	Implement a simple bloom filter in python
+	Implement a counting bloom BloomFilter
 	"""
 	def __init__(self, m, k):
 		# decide methods and how many and what hashes to be used
@@ -26,12 +26,12 @@ class BloomFilter(object):
 		self.m = m # number of bits in the array
 		self.k = k # number of hashes to be used
 		self.n = 0 # total count of the elemnts inserted in the set, intialized to zero, if this is incremented on add, this will be length of the filter, given elements are not removed
-		self.bv = BitVector.BitVector(size = self.m)
+		self.ba = []
 		self._setAllBitsToZero()
 
 	def _setAllBitsToZero(self):
-		for i in self.bv:
-			self.bv[i] = 0
+		for i in range(0, self.m):
+			self.ba.append(0)
 
 	def getBitArrayIndices(self, key):
 		"""
@@ -43,15 +43,16 @@ class BloomFilter(object):
 		for i in range(1, self.k + 1):
 			returnList.append((hash(key) + i * mmh3.hash(key)) % self.m)
 		#print "Indices list for key: ", key, " is: ", str(returnList)
-		return returnList
+		return returnList			
 
 	def add(self, key):
 		"""
-		Insert an element to the filter, rest is application insert
+		Insert an element in the counting BloomFilter
 		"""
+		#super(CountingBloomFilter, self).add(key)
+		#super(CountingBloomFilter, self).generateStats()
 		for i in self.getBitArrayIndices(key):
-			self.bv[i] = 1
-		# to check length
+			self.ba[i] += 1
 		self.n += 1
 
 	def contains(self, key):
@@ -59,15 +60,23 @@ class BloomFilter(object):
 		returns boolean whether element exists in the set or not
 		"""
 		for i in self.getBitArrayIndices(key):
-			if self.bv[i] != 1:
+			if self.ba[i] <= 0:
 				return False
-		return True
+		return True		
 
 	def length(self):
 		"""
 		Returns the current size of Bloom filter
 		"""
 		return self.n
+
+	def remove(self, key):
+		"""
+		Removes a key from counting bloom filter
+		"""
+		for i in self.getBitArrayIndices(key):
+			self.ba[i] -= 1
+		self.n -= 1
 
 	def generateStats(self):
 		"""
@@ -89,4 +98,4 @@ class BloomFilter(object):
 		Reinitializes the filter and clears old values and statistics
 		"""
 		self.n = 0
-		self.bv = BitVector.BitVector(size = self.m)
+		self.bv = BitVector.BitVector(size = self.m)	
