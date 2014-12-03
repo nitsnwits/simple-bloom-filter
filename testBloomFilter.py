@@ -36,7 +36,9 @@ def unitTestBloomFilter():
 		print "Test: Failed Random Key present"
 	else:
 		print "Test: OK Random Key not present"
+	bf.generateStats()
 	print "\nUnit Test Completed\n"
+	bf.clear()
 
 def loadTestBloomFilter(n, m, k):
 	"""
@@ -74,6 +76,7 @@ def loadTestBloomFilter(n, m, k):
 	print "Number of false positives: " + str(fp)
 	print "Actual False positive rate: ", 100.0 * float(fp)/float(fpCheckCount)
 	bf.generateStats()
+	bf.clear()
 
 	print "\nLoad test Completed\n"
 

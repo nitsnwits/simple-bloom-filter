@@ -63,7 +63,7 @@ class BloomFilter(object):
 		"""
 		return self.n
 
-	def getStats(self):
+	def generateStats(self):
 		"""
 		Calculates and returns the statistics of a filter
 		Probability of FP, n, m, k, predicted false positive rate.
@@ -80,7 +80,7 @@ class BloomFilter(object):
 
 	def clear(self):
 		"""
-		Reinitizes the filter and clears old values and statistics
+		Reinitializes the filter and clears old values and statistics
 		"""
 		self.n = 0
 		self.bv = BitVector.BitVector(size = self.m)
