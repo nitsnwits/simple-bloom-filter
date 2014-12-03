@@ -66,15 +66,20 @@ def loadTestBloomFilter(n, m, k):
 
 	# Check non-existent keys
 	fp = 0
-	for i in range(0, 100000):
+	fpCheckCount = 100000
+	for i in range(0, fpCheckCount):
 		if bf.contains(getRandomString()):
 			fp += 1
 
 	print "Number of false positives: " + str(fp)
+	print "Actual False positive rate: ", 100.0 * float(fp)/float(fpCheckCount)
+	bf.generateStats()
 
 	print "\nLoad test Completed\n"
 
 
 if __name__ == '__main__':
 	unitTestBloomFilter()
-	loadTestBloomFilter(10000, 100000, 10)
+	# filter of 1 Mb, 1 million bits, 20% elements entered, k=2
+	loadTestBloomFilter(200000, 1000000, 2)
+

@@ -6,10 +6,9 @@
 #
 
 import sys
-import hashlib
 import mmh3 # murmurhash: is faster for blooms
-import bitarray
 import BitVector
+import math
 
 # set default encoding to utf-8
 reload(sys)
@@ -63,3 +62,25 @@ class BloomFilter(object):
 		Returns the current size of Bloom filter
 		"""
 		return self.n
+
+	def getStats(self):
+		"""
+		Calculates and returns the statistics of a filter
+		Probability of FP, n, m, k, predicted false positive rate.
+		"""
+		n = self.n
+		m = self.m
+		k = self.k
+		p_fp = math.pow(1.0 - math.exp(-(k*n)/m), k)
+		print "Probability of false positives: ", p_fp
+		print "Predicted false positive rate: ", p_fp * 100.0
+		print "Number of elements entered in filter: ", n
+		print "Number of bits in filter: ", m
+		print "Number of hashes in filter: ", k
+
+	def clear(self):
+		"""
+		Reinitizes the filter and clears old values and statistics
+		"""
+		self.n = 0
+		self.bv = BitVector.BitVector(size = self.m)
