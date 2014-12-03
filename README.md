@@ -8,5 +8,7 @@ simple-bloom-filter
 *ScalableBloomFilter.py*: Work in progress.
 
 To setup : `pip install -r requirements.txt`
+
 To test Bloom Filter : `./testBloomFilter.py`
+
 To test Counting Bloom Filter: `./testCountingBloomFilter.py`
