@@ -14,7 +14,7 @@ simple-bloom-filter
 **testScalableBloomFilter.py**: Unit Test and Load Tests for Scalable Bloom Filter
 
 #### How to run tests
-To setup : `pip install -r requirements.txt`
-To test Bloom Filter : `./testBloomFilter.py`
-To test Counting Bloom Filter: `./testCountingBloomFilter.py`
-To test Scalable Bloom Filter: `./testScalableBloomFilter.py`
+- To setup : `pip install -r requirements.txt`
+- To test Bloom Filter : `./testBloomFilter.py`
+- To test Counting Bloom Filter: `./testCountingBloomFilter.py`
+- To test Scalable Bloom Filter: `./testScalableBloomFilter.py`
