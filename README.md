@@ -109,46 +109,7 @@ Predicted false positive rate:  39.9576400894
 Number of elements entered in filter:  100.0
 Number of bits in filter:  200.0
 Number of hashes in filter:  2.0
-Probability of false positives:  0.399576400894
-Predicted false positive rate:  39.9576400894
-Number of elements entered in filter:  100.0
-Number of bits in filter:  200.0
-Number of hashes in filter:  2.0
-Probability of false positives:  0.399576400894
-Predicted false positive rate:  39.9576400894
-Number of elements entered in filter:  100.0
-Number of bits in filter:  200.0
-Number of hashes in filter:  2.0
-Probability of false positives:  0.399576400894
-Predicted false positive rate:  39.9576400894
-Number of elements entered in filter:  100.0
-Number of bits in filter:  200.0
-Number of hashes in filter:  2.0
-Probability of false positives:  0.399576400894
-Predicted false positive rate:  39.9576400894
-Number of elements entered in filter:  100.0
-Number of bits in filter:  200.0
-Number of hashes in filter:  2.0
-Probability of false positives:  0.399576400894
-Predicted false positive rate:  39.9576400894
-Number of elements entered in filter:  100.0
-Number of bits in filter:  200.0
-Number of hashes in filter:  2.0
-Probability of false positives:  0.399576400894
-Predicted false positive rate:  39.9576400894
-Number of elements entered in filter:  100.0
-Number of bits in filter:  200.0
-Number of hashes in filter:  2.0
-Probability of false positives:  0.399576400894
-Predicted false positive rate:  39.9576400894
-Number of elements entered in filter:  100.0
-Number of bits in filter:  200.0
-Number of hashes in filter:  2.0
-Probability of false positives:  0.399576400894
-Predicted false positive rate:  39.9576400894
-Number of elements entered in filter:  100.0
-Number of bits in filter:  200.0
-Number of hashes in filter:  2.0
+[ output truncated ]
 
 Load test Completed
 
