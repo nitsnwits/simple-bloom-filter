@@ -74,10 +74,10 @@ class BloomFilter(object):
 		Calculates and returns the statistics of a filter
 		Probability of FP, n, m, k, predicted false positive rate.
 		"""
-		n = self.n
-		m = self.m
-		k = self.k
-		p_fp = math.pow(1.0 - math.exp(-(k*n)/m), k)
+		n = float(self.n)
+		m = float(self.m)
+		k = float(self.k)
+		p_fp = math.pow((1.0 - math.exp(-(k*n)/m)), k)
 		print "Probability of false positives: ", p_fp
 		print "Predicted false positive rate: ", p_fp * 100.0
 		print "Number of elements entered in filter: ", n
