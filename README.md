@@ -21,7 +21,7 @@ simple-bloom-filter
 
 #### Show me the runs
 
-**Bloom Filter Tests***
+**Bloom Filter Tests**
 ```
 ~/simple-bloom-filter 663: -> ./testBloomFilter.py 
 
@@ -52,7 +52,7 @@ Load test Completed
 ~/simple-bloom-filter 664: ->
 ```
 
-***Counting Bloom Filter Tests***
+**Counting Bloom Filter Tests**
 ```
 ~/simple-bloom-filter 664: -> ./testCountingBloomFilter.py 
 
@@ -72,7 +72,7 @@ Unit Test Completed
 ~/simple-bloom-filter 665: ->
 ```
 
-***Scalable Bloom Filter Tests***
+**Scalable Bloom Filter Tests**
 ```
 ~/simple-bloom-filter 665: -> ./testScalableBloomFilter.py 
 
