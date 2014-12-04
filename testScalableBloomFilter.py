@@ -80,6 +80,6 @@ def loadTestScalableBloomFilter(n, m, k):
 	print "\nLoad test Completed\n"
 
 if __name__ == '__main__':
-	#unitTestScalableBloomFilter()
+	unitTestScalableBloomFilter()
 	loadTestScalableBloomFilter(1000, 10, 2)
 
